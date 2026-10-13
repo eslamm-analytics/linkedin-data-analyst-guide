@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>LinkedIn Cover — Eslam Mohamed</title>
+<style>
+  html, body { margin: 0; padding: 0; width: 1584px; height: 396px; overflow: hidden; }
+  * { box-sizing: border-box; }
+
+  #banner {
+    position: relative;
+    width: 1584px; height: 396px;
+    background:
+      radial-gradient(900px 420px at 88% 120%, rgba(10,102,194,.55), transparent 60%),
+      radial-gradient(700px 380px at 96% -30%, rgba(87,169,251,.28), transparent 65%),
+      linear-gradient(120deg, #0a1f38 0%, #0b2749 45%, #0a3566 100%);
+    overflow: hidden;
+    font-family: "Segoe UI", -apple-system, Roboto, Helvetica, Arial, sans-serif;
+    display: flex; align-items: center;
+    padding: 0 78px;
+  }
+
+  /* subtle grid */
+  #banner::before {
+    content: ""; position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,.045) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.045) 1px, transparent 1px);
+    background-size: 66px 66px;
+    mask-image: linear-gradient(90deg, transparent 30%, #000 100%);
+    -webkit-mask-image: linear-gradient(90deg, transparent 30%, #000 100%);
+  }
+
+  /* glow orb */
+  .orb {
+    position: absolute; border-radius: 50%;
+    background: radial-gradient(circle, rgba(87,169,251,.45), transparent 70%);
+  }
+  .orb.a { width: 420px; height: 420px; right: -110px; top: -160px; }
+  .orb.b { width: 320px; height: 320px; right: 240px; bottom: -200px; background: radial-gradient(circle, rgba(10,102,194,.45), transparent 70%); }
+
+  /* ---------- LEFT ---------- */
+  .left { position: relative; z-index: 3; width: 900px; }
+
+  .kicker {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-size: 15px; letter-spacing: .34em; text-transform: uppercase;
+    color: #7cc0ff; font-weight: 600;
+  }
+  .kicker .dot { width: 9px; height: 9px; border-radius: 50%; background: #57a9fb; box-shadow: 0 0 14px #57a9fb; }
+
+  .name {
+    font-size: 78px; line-height: 1.02; font-weight: 800;
+    color: #ffffff; letter-spacing: -1.5px; margin: 16px 0 0;
+  }
+
+  .role {
+    font-size: 27px; font-weight: 700; margin: 16px 0 0;
+    color: #ffffff;
+  }
+  .role .accent { color: #57a9fb; }
+  .role .sep { color: rgba(255,255,255,.35); margin: 0 12px; font-weight: 500; }
+
+  .tagline {
+    font-size: 19px; margin: 14px 0 0; color: rgba(255,255,255,.72); font-weight: 400;
+  }
+
+  .chips { display: flex; gap: 12px; margin: 26px 0 0; }
+  .chip {
+    display: inline-flex; align-items: center; gap: 9px;
+    padding: 9px 18px; border-radius: 30px;
+    background: rgba(255,255,255,.07);
+    border: 1px solid rgba(124,192,255,.35);
+    color: #dcecff; font-size: 16px; font-weight: 600;
+  }
+  .chip .ic { color: #57a9fb; font-size: 17px; }
+
+  .contact {
+    display: flex; align-items: center; gap: 26px;
+    margin-top: 24px; font-size: 15.5px; color: rgba(255,255,255,.62);
+    font-weight: 500;
+  }
+  .contact span { display: inline-flex; align-items: center; gap: 8px; }
+  .contact b { color: #cfe3ff; font-weight: 600; }
+
+  /* ---------- RIGHT : chart ---------- */
+  .right {
+    position: absolute; right: 66px; bottom: 0; top: 0;
+    width: 470px; z-index: 2; display: flex; flex-direction: column; justify-content: flex-end;
+  }
+  .panel {
+    position: absolute; inset: 58px 0 54px 30px;
+    border: 1px solid rgba(124,192,255,.22);
+    border-radius: 18px;
+    background: linear-gradient(160deg, rgba(255,255,255,.06), rgba(255,255,255,.015));
+    backdrop-filter: blur(2px);
+  }
+  .panel .hdr { position: absolute; top: 16px; left: 20px; font-size: 13px; letter-spacing: .18em; text-transform: uppercase; color: #7cc0ff; font-weight: 700; }
+  .panel .live { position: absolute; top: 16px; right: 20px; font-size: 12px; color: rgba(255,255,255,.55); display: flex; align-items: center; gap: 7px; }
+  .panel .live i { width: 8px; height: 8px; border-radius: 50%; background: #46d39a; box-shadow: 0 0 10px #46d39a; display: inline-block; }
+
+  .bars {
+    position: absolute; left: 26px; right: 26px; bottom: 26px; height: 190px;
+    display: flex; align-items: flex-end; gap: 15px;
+  }
+  .bars .b {
+    flex: 1; border-radius: 7px 7px 4px 4px;
+    background: linear-gradient(180deg, #57a9fb, #0a66c2);
+    box-shadow: 0 0 20px rgba(87,169,251,.28);
+    opacity: .95;
+  }
+  .bars .b.dim { background: linear-gradient(180deg, rgba(124,192,255,.5), rgba(10,102,194,.35)); box-shadow: none; }
+
+  .trend {
+    position: absolute; left: 26px; right: 26px; bottom: 0; height: 100%;
+    pointer-events: none;
+  }
+</style>
+</head>
+<body>
+  <div id="banner">
+    <div class="orb a"></div>
+    <div class="orb b"></div>
+
+    <!-- LEFT -->
+    <div class="left">
+      <div class="kicker"><span class="dot"></span> Data Analytics</div>
+
+      <div class="name">Eslam Mohamed</div>
+
+      <div class="role">
+        <span class="accent">Data Analyst</span>
+        <span class="sep">|</span>
+        <span>Excel · SQL · Power BI</span>
+      </div>
+
+      <div class="tagline">Turning raw data into clear, decision-ready insights.</div>
+
+      <div class="chips">
+        <span class="chip"><span class="ic">▦</span> Dashboards</span>
+        <span class="chip"><span class="ic">⌗</span> SQL Queries</span>
+        <span class="chip"><span class="ic">◔</span> KPI Reporting</span>
+      </div>
+
+    </div>
+
+    <!-- RIGHT : analytics panel -->
+    <div class="right">
+      <div class="panel">
+        <div class="hdr">Performance</div>
+        <div class="live"><i></i> trend</div>
+        <div class="bars">
+          <div class="b dim" style="height:32%"></div>
+          <div class="b dim" style="height:48%"></div>
+          <div class="b" style="height:40%"></div>
+          <div class="b" style="height:66%"></div>
+          <div class="b" style="height:57%"></div>
+          <div class="b" style="height:84%"></div>
+          <div class="b" style="height:74%"></div>
+          <div class="b" style="height:100%"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

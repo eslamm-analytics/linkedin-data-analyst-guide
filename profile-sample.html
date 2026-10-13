@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eslam Mohamed — LinkedIn Profile (Sample)</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: #f3f2ef;
+    color: rgba(0,0,0,.9);
+    padding: 24px 12px 60px;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; }
+
+  .card {
+    background: #fff;
+    border: 1px solid #e0dfdc;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 8px;
+  }
+
+  /* ---------- Banner ---------- */
+  .banner {
+    height: 175px;
+    background: linear-gradient(120deg, #0a66c2 0%, #004182 55%, #00306e 100%);
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 0 28px;
+  }
+  .banner .bshape {
+    position: absolute; right: 30px; bottom: 12px; opacity: .28;
+    display: flex; align-items: flex-end; gap: 10px; height: 120px;
+  }
+  .banner .bar { width: 26px; background: #fff; border-radius: 4px 4px 0 0; }
+  .banner .b1 { height: 45px; } .banner .b2 { height: 88px; }
+  .banner .b3 { height: 62px; } .banner .b4 { height: 115px; }
+  .banner .btext { position: relative; z-index: 2; color: #fff; }
+  .banner .btext .n { font-size: 13px; letter-spacing: .18em; text-transform: uppercase; opacity: .85; }
+  .banner .btext .r { font-size: 26px; font-weight: 700; margin-top: 2px; }
+  .banner .btext .s { font-size: 15px; opacity: .95; margin-top: 6px; }
+
+  .head { padding: 0 24px 20px; position: relative; }
+  .avatar {
+    width: 132px; height: 132px; border-radius: 50%;
+    background: #e7e7e7; border: 5px solid #fff; margin-top: -66px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 42px; font-weight: 700; color: #0a66c2;
+    box-shadow: 0 1px 3px rgba(0,0,0,.15);
+  }
+  .name { font-size: 24px; font-weight: 600; margin-top: 12px; }
+  .headline { font-size: 15px; margin-top: 4px; color: rgba(0,0,0,.9); line-height: 1.4; }
+  .meta { font-size: 14px; color: rgba(0,0,0,.6); margin-top: 8px; }
+  .meta a { color: #0a66c2; text-decoration: none; font-weight: 600; }
+  .badges { display: flex; gap: 10px; margin-top: 14px; flex-wrap: wrap; }
+  .btn {
+    display: inline-block; padding: 6px 16px; border-radius: 20px;
+    font-size: 15px; font-weight: 600; border: 1px solid transparent; cursor: default;
+  }
+  .btn.primary { background: #0a66c2; color: #fff; }
+  .btn.outline { background: #fff; color: #0a66c2; border-color: #0a66c2; }
+  .btn.ghost { background: #f3f2ef; color: rgba(0,0,0,.75); border-color: rgba(0,0,0,.35); }
+
+  /* ---------- Section ---------- */
+  .sec { padding: 20px 24px; }
+  .sec + .sec { border-top: 1px solid #e8e8e8; }
+  .sec h2 { font-size: 20px; font-weight: 600; margin-bottom: 12px; }
+  .sec p { font-size: 14.5px; line-height: 1.6; margin-bottom: 10px; }
+  .sec p:last-child { margin-bottom: 0; }
+  .about-list { font-size: 14.5px; line-height: 1.7; padding-left: 18px; margin: 8px 0 12px; }
+
+  /* ---------- Experience ---------- */
+  .exp { display: flex; gap: 14px; padding: 14px 0; }
+  .exp + .exp { border-top: 1px solid #f0f0f0; }
+  .logo {
+    width: 48px; height: 48px; flex: 0 0 48px; border-radius: 8px;
+    background: #0a66c2; color: #fff; display: flex; align-items: center;
+    justify-content: center; font-weight: 700; font-size: 18px;
+  }
+  .logo.alt { background: #e7f0fa; color: #0a66c2; }
+  .exp .role { font-size: 16px; font-weight: 600; }
+  .exp .org { font-size: 14px; color: rgba(0,0,0,.85); margin-top: 1px; }
+  .exp .when { font-size: 13.5px; color: rgba(0,0,0,.6); margin-top: 2px; }
+  .exp ul { margin: 10px 0 0 4px; padding-left: 18px; }
+  .exp li { font-size: 14px; line-height: 1.55; margin-bottom: 5px; }
+
+  /* ---------- Skills chips ---------- */
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; }
+  .chip {
+    background: #eef3f8; color: #0a66c2; border: 1px solid #d0e0f5;
+    padding: 5px 13px; border-radius: 16px; font-size: 13.5px; font-weight: 600;
+  }
+  .chip.pin { background: #0a66c2; color: #fff; border-color: #0a66c2; }
+  .chip .v { font-size: 11px; margin-left: 5px; }
+
+  /* ---------- Projects ---------- */
+  .proj { border: 1px solid #e0dfdc; border-radius: 8px; padding: 14px 16px; margin-bottom: 12px; }
+  .proj h3 { font-size: 16px; font-weight: 600; }
+  .proj .tools { font-size: 13px; color: rgba(0,0,0,.6); margin: 3px 0 8px; }
+  .proj .row { font-size: 14px; line-height: 1.55; margin-bottom: 4px; }
+  .proj .row b { color: rgba(0,0,0,.9); }
+  .proj a { color: #0a66c2; text-decoration: none; font-weight: 600; font-size: 13.5px; }
+
+  /* ---------- Featured ---------- */
+  .feat { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .feat .item { border: 1px solid #e0dfdc; border-radius: 8px; overflow: hidden; }
+  .feat .thumb { height: 88px; background: linear-gradient(135deg,#e7f0fa,#c9def5); display:flex; align-items:center; justify-content:center; font-size: 26px; }
+  .feat .lab { padding: 9px 11px; font-size: 13px; }
+  .feat .lab b { display: block; font-size: 14px; }
+
+  /* ---------- Education ---------- */
+  .edu { display: flex; gap: 14px; align-items: flex-start; }
+  .edu .txt { font-size: 14px; line-height: 1.6; }
+
+  .note {
+    max-width: 760px; margin: 16px auto 0; font-size: 13px;
+    background: #fff8e1; border: 1px solid #f0e0a0; border-radius: 8px;
+    padding: 12px 16px; line-height: 1.6;
+  }
+  @media (max-width: 560px) {
+    .feat { grid-template-columns: 1fr; }
+    .banner .btext .r { font-size: 20px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ================= HEADER ================= -->
+  <div class="card">
+    <div class="banner">
+      <div class="bshape">
+        <div class="bar b1"></div><div class="bar b2"></div>
+        <div class="bar b3"></div><div class="bar b4"></div>
+      </div>
+      <div class="btext">
+        <div class="n">Eslam Mohamed</div>
+        <div class="r">Data Analyst</div>
+        <div class="s">SQL · Power BI · Excel</div>
+      </div>
+    </div>
+    <div class="head">
+      <div class="avatar">IM</div>
+      <div class="name">Eslam Mohamed</div>
+      <div class="headline">Data Analyst in Transition | SQL | Power BI | Excel | Turning raw data into clear business decisions</div>
+      <div class="meta">Cairo, Egypt · Remote-friendly · <a href="#">Contact info</a></div>
+      <div class="badges">
+        <span class="btn primary">Open to</span>
+        <span class="btn outline">Add profile section</span>
+        <span class="btn ghost">More</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= ABOUT ================= -->
+  <div class="card">
+    <div class="sec">
+      <h2>About</h2>
+      <p>Data Analyst in transition, using SQL, Power BI, and Excel to turn messy datasets into clean dashboards and clear decisions. I'm currently moving from <b>[current field]</b> into data analytics — learning every day and building real projects along the way.</p>
+      <p>My interest in data started when <b>[السبب]</b>. That pushed me to learn the full analytics workflow: cleaning and validating data, exploring it with SQL, and presenting findings through visualizations that non-technical people can actually use.</p>
+      <p><b>What I work with:</b></p>
+      <ul class="about-list">
+        <li><b>SQL</b> — joins, CTEs, window functions, aggregations, subqueries</li>
+        <li><b>Excel</b> — PivotTables, XLOOKUP, Power Query, data cleaning, KPI reporting</li>
+        <li><b>Power BI</b> — data modeling, DAX basics, interactive dashboard design</li>
+        <li><b>Data storytelling</b> — turning analysis into recommendations stakeholders can act on</li>
+      </ul>
+      <p>I'm open to <b>junior and graduate data analyst roles</b> (full-time, hybrid, or remote). Feel free to message me here or email <b>[your email]</b> — I'm always happy to talk data.</p>
+    </div>
+  </div>
+
+  <!-- ================= EXPERIENCE ================= -->
+  <div class="card">
+    <div class="sec">
+      <h2>Experience</h2>
+
+      <div class="exp">
+        <div class="logo alt">📊</div>
+        <div>
+          <div class="role">Data Analytics — Self-Directed Learning</div>
+          <div class="org">Self-employed</div>
+          <div class="when">2026 – Present · Cairo, Egypt</div>
+          <ul>
+            <li>Completed the <b>DataCamp Data Analyst Track: Excel, SQL, and Power BI</b> (39 hours) — data cleaning, SQL querying, and dashboards end to end.</li>
+            <li>Built <b>3 end-to-end portfolio projects</b> using SQL, Excel, and Power BI, from raw data cleaning to finished dashboard.</li>
+            <li>Practice <b>5+ SQL challenges weekly</b> (joins, CTEs, window functions) and share learnings on LinkedIn.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp">
+        <div class="logo">SS</div>
+        <div>
+          <div class="role">[Current Role — e.g. Sales Support Specialist]</div>
+          <div class="org">[Company] · Full-time</div>
+          <div class="when">2023 – Present · Cairo, Egypt</div>
+          <ul>
+            <li>Automated the weekly sales report in Excel (PivotTables + XLOOKUP), cutting manual prep time from <b>~3 hours to 30 minutes</b>.</li>
+            <li>Tracked and reported monthly <b>KPIs</b> for [N] accounts, flagging drops early so the team could act before month-end.</li>
+            <li>Built a shared order-tracking sheet used by [N] teammates, improving data accuracy and reducing duplicate entries.</li>
+            <li>Analyzed recurring customer feedback to surface top issues, supporting a process change that reduced complaints.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= SKILLS ================= -->
+  <div class="card">
+    <div class="sec">
+      <h2>Skills</h2>
+      <div class="chips">
+        <span class="chip pin">SQL</span>
+        <span class="chip pin">Microsoft Power BI</span>
+        <span class="chip pin">Microsoft Excel</span>
+        <span class="chip">Data Analysis</span>
+        <span class="chip">Data Visualization</span>
+        <span class="chip">Data Cleaning</span>
+        <span class="chip">KPI Reporting</span>
+        <span class="chip">Dashboard Design</span>
+        <span class="chip">Power Query</span>
+        <span class="chip">DAX</span>
+        <span class="chip">Data Storytelling</span>
+        <span class="chip">Problem Solving</span>
+        <span class="chip">Analytical Thinking<span class="v">✔</span></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= FEATURED ================= -->
+  <div class="card">
+    <div class="sec">
+      <h2>Featured</h2>
+      <div class="feat">
+        <div class="item"><div class="thumb">📈</div><div class="lab"><b>Retail Sales Dashboard</b>Power BI project</div></div>
+        <div class="item"><div class="thumb">💻</div><div class="lab"><b>GitHub Portfolio</b>All projects</div></div>
+        <div class="item"><div class="thumb">✍️</div><div class="lab"><b>My learning journey</b>LinkedIn post</div></div>
+        <div class="item"><div class="thumb">📄</div><div class="lab"><b>Resume (PDF)</b>Download</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= PROJECTS ================= -->
+  <div class="card">
+    <div class="sec">
+      <h2>Projects</h2>
+
+      <div class="proj">
+        <h3>Retail Sales Performance Dashboard</h3>
+        <div class="tools">Power BI · SQL</div>
+        <div class="row"><b>Problem:</b> no single view of sales performance across branches.</div>
+        <div class="row"><b>Approach:</b> cleaned 12,000+ rows in SQL → data model → KPIs in Power BI.</div>
+        <div class="row"><b>Key insight:</b> 8% of products drove 40% of revenue.</div>
+        <a href="#">github.com/[username]/retail-dashboard</a>
+      </div>
+
+      <div class="proj">
+        <h3>Customer Churn Analysis</h3>
+        <div class="tools">SQL · Excel</div>
+        <div class="row"><b>Problem:</b> rising customer churn.</div>
+        <div class="row"><b>Approach:</b> segmented customers and analyzed the drivers of churn.</div>
+        <div class="row"><b>Key insight:</b> top 3 churn drivers = [summary].</div>
+        <a href="#">github.com/[username]/churn-analysis</a>
+      </div>
+
+      <div class="proj">
+        <h3>[Excel KPI Tracker]</h3>
+        <div class="tools">Excel</div>
+        <div class="row"><b>Problem:</b> manual weekly tracking of [activity] performance.</div>
+        <div class="row"><b>Approach:</b> PivotTables + XLOOKUP + conditional formatting.</div>
+        <div class="row"><b>Key insight:</b> [result].</div>
+        <a href="#">[link]</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= EDUCATION ================= -->
+  <div class="card">
+    <div class="sec">
+      <h2>Education</h2>
+      <div class="edu">
+        <div class="logo alt">🎓</div>
+        <div class="txt">
+          <b>Bachelor of [Field]</b><br>
+          [University]<br>
+          [Year]
+        </div>
+      </div>
+    </div>
+    <div class="sec">
+      <h2>Licenses &amp; certifications</h2>
+      <div class="edu">
+        <div class="logo alt">📜</div>
+        <div class="txt">
+          <b>Data Analyst Track: Excel, SQL, and Power BI</b> — DataCamp<br>
+          <span style="color:rgba(0,0,0,.6)">Completed Feb 2026 · 39 hours</span><br><br>
+          <b>SQL (Basic) Certificate</b> — HackerRank<br><br>
+          <b>Microsoft Power BI</b> — [issuer]
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="note">
+  <b>ملاحظة:</b> ده نموذج بصري فقط لمحاكاة شكل صفحة لينكدإنب. النص الكامل الجاهز للنسخ والتعديل موجود في ملف
+  <b>eslam-mohamed-linkedin-profile.md</b>. أي حاجة بين [أقواس] بدّلها بمعلوماتك الحقيقية.
+</div>
+
+</body>
+</html>
