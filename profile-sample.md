@@ -9,7 +9,7 @@
 - **Name:** Eslam Mohamed
 - **Headline (أهم سطر — 220 حرف):**
   `Data Analyst in Transition | SQL | Power BI | Excel | Turning raw data into clear business decisions`
-- **Location:** Cairo, Egypt (Remote-friendly)
+- **Location:** Beni Suef, Egypt (Remote-friendly)
 - **Custom URL:** `linkedin.com/in/eslammohamed-analyst`
 - **Open to:** Junior Data Analyst · Reporting Analyst · Data Analyst (Full-time / Hybrid / Remote)
 - **Profile language:** English
